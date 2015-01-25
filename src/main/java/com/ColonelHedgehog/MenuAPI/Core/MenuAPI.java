@@ -4,8 +4,6 @@ import com.ColonelHedgehog.MenuAPI.Libraries.MenuRegistry;
 import com.ColonelHedgehog.MenuAPI.Listeners.MenuActions;
 import org.bukkit.plugin.Plugin;
 
-import java.util.List;
-
 
 /**
  * Created by ColonelHedgehog on 12/11/14.
@@ -29,19 +27,31 @@ public class MenuAPI
 
     // Please note: If you look at the above variables you must donate your spleen to the next monkey in need of a heart transplant.
 
+    private static MenuAPI menuAPI;
     private Plugin plugin;
-    private static List<String> menus;
     private static MenuRegistry menuRegistry;
 
     public MenuAPI(Plugin plugin)
     {
         this.plugin = plugin;
+        menuAPI = this;
+        menuRegistry = new MenuRegistry();
         plugin.getServer().getPluginManager().registerEvents(new MenuActions(), plugin);
         plugin.getLogger().info("Using " + ANSI_BLUE + ANSI_BOLD_ON + "Colonel" + ANSI_CYAN + "Hedgehog" + ANSI_RESET + ANSI_BOLD_OFF + "'s "  + ANSI_YELLOW +  "MenuAPI. All libraries loaded." + ANSI_RESET);
     }
 
-    public static MenuRegistry getMenuRegistry()
+    public MenuRegistry getMenuRegistry()
     {
         return menuRegistry;
+    }
+
+    public Plugin getPlugin()
+    {
+        return plugin;
+    }
+
+    public static MenuAPI i()
+    {
+        return menuAPI;
     }
 }

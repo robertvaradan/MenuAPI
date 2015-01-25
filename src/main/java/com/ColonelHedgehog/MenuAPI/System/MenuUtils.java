@@ -1,7 +1,6 @@
 package com.ColonelHedgehog.MenuAPI.System;
 
-import com.ColonelHedgehog.MenuAPI.Components.MenuObject;
-import com.ColonelHedgehog.MenuAPI.Core.MenuAPI;
+import com.ColonelHedgehog.MenuAPI.Components.Coordinates;
 
 /**
  * Created by ColonelHedgehog on 12/11/14.
@@ -10,13 +9,18 @@ import com.ColonelHedgehog.MenuAPI.Core.MenuAPI;
  */
 public class MenuUtils
 {
-    public static MenuObject getMenuObjectAtCoordinated(int X, int Y)
+    public static int calculateXCoordinates(int slot)
     {
-        if(X > 8 || Y > 8 || X < 0 || Y < 0)
-        {
-            throw new IllegalArgumentException(MenuAPI.ANSI_BOLD_ON + MenuAPI.ANSI_RED + "Unreachable coordinates: \"(" + X + ", " + Y + ")\"! Values must be greater than -1 but smaller than 9.");
-        }
+        return (slot + 1 - calculateYCoordinates(slot));
+    }
 
-        return null;
+    public static int calculateYCoordinates(int slot)
+    {
+        return (slot / 9) + 1;
+    }
+
+    public static int toSlotNumber(Coordinates coordinates)
+    {
+        return ((coordinates.getY() - 1) * 9) + (coordinates.getX() - 1);
     }
 }

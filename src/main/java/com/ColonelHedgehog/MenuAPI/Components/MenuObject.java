@@ -19,6 +19,9 @@ public class MenuObject
     private Material icon;
     private short data;
     private int amount;
+    private Coordinates coordinates;
+    private ActionListener actionListener;
+    private Menu menu;
 
     public MenuObject(ItemStack holder)
     {
@@ -32,6 +35,9 @@ public class MenuObject
         this.icon = holder.getType();
         this.data = holder.getDurability();
         this.amount = holder.getAmount();
+        this.coordinates = null;
+        this.actionListener = null;
+        this.menu = null;
     }
 
     public MenuObject(Material icon, byte data, String name, List<String> tooltip)
@@ -41,5 +47,32 @@ public class MenuObject
         this.data = data;
         this.icon = icon;
         this.amount = 1;
+        this.coordinates = null;
+        this.actionListener = null;
+        this.menu = null;
+    }
+
+    public ItemStack toItemStack()
+    {
+        return new ItemStack(icon, amount, data);
+    }
+
+    public Coordinates getCoordinates()
+    {
+        return coordinates;
+    }
+    public void setCoordinates(Coordinates coordinates)
+    {
+        this.coordinates = coordinates;
+    }
+
+    public void setActionListener(ActionListener actionListener)
+    {
+        this.actionListener = actionListener;
+    }
+
+    public ActionListener getActionListener()
+    {
+        return actionListener;
     }
 }

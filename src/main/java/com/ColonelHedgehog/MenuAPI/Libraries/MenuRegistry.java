@@ -30,8 +30,21 @@ public class MenuRegistry
         menus.add(inv);
     }
 
-    public void deregister(Inventory inv)
+    public void deregister(Menu inv)
     {
         menus.remove(inv);
+    }
+
+    public Menu getByInventory(Inventory inventory)
+    {
+        for(Menu menu : menus)
+        {
+            if(menu.getInventory().equals(inventory))
+            {
+                return menu;
+            }
+        }
+
+        return null;
     }
 }
