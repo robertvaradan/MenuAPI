@@ -1,12 +1,13 @@
-package com.ColonelHedgehog.MenuAPI.Listeners;
+package com.ColonelHedgehog.Menus.Listeners;
 
-import com.ColonelHedgehog.MenuAPI.Components.Menu;
-import com.ColonelHedgehog.MenuAPI.Components.MenuObject;
-import com.ColonelHedgehog.MenuAPI.Core.MenuAPI;
+import com.ColonelHedgehog.Menus.Components.Menu;
+import com.ColonelHedgehog.Menus.Components.MenuObject;
+import com.ColonelHedgehog.Menus.Core.MenuAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 /**
  * Created by ColonelHedgehog on 12/11/14.
@@ -16,7 +17,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 public class MenuActions implements Listener
 {
     @EventHandler
-    public void onClick(InventoryClickEvent event)
+    public void onClick(final InventoryClickEvent event)
     {
         if(event.getCurrentItem() == null)
         {
@@ -31,7 +32,7 @@ public class MenuActions implements Listener
 
         event.setCancelled(true);
 
-        MenuObject menuObject = menu.getItemByItemStack(event.getCurrentItem());
+        final MenuObject menuObject = menu.getItemByItemStack(event.getCurrentItem());
 
         if(menuObject == null)
         {
@@ -44,6 +45,13 @@ public class MenuActions implements Listener
             return;
         }
 
-        menuObject.getActionListener().onClick(event.getClick(), menuObject, (Player) event.getWhoClicked());
+        new BukkitRunnable()
+        {
+            @Override
+            public void run()
+            {
+                menuObject.getActionListener().onClick(event.getClick(), menuObject, (Player) event.getWhoClicked());
+            }
+        }.runTask(MenuAPI.i());
     }
 }

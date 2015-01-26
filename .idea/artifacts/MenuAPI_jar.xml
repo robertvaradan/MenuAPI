@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="MenuAPI:jar">
-    <output-path>$USER_HOME$/Documents/Never Delete</output-path>
-    <root id="archive" name="MenuAPI.jar">
-      <element id="module-output" name="MenuAPI" />
-    </root>
-  </artifact>
-</component>

@@ -1,6 +1,9 @@
-package com.ColonelHedgehog.MenuAPI.Components;
+package com.ColonelHedgehog.Menus.Components;
 
-import com.ColonelHedgehog.MenuAPI.Core.MenuAPI;
+import com.ColonelHedgehog.Menus.Core.MenuAPI;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -54,7 +57,8 @@ public class Menu
 
         if(slot >= inv.getSize() || slot < 0)
         {
-            throw new IllegalArgumentException(MenuAPI.ANSI_BOLD_ON + MenuAPI.ANSI_RED + "Unreachable coordinates \"(" + coordinates.getX() + ", " + coordinates.getY() + ")\"! These coordinates measure to " + slot + " which cannot be mapped on an inventory with a size of " + inv.getSize() + "." + MenuAPI.ANSI_RESET);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "Unreachable coordinates \"(" + coordinates.getX() + ", " + coordinates.getY() + ")\"! These coordinates measure to " + slot + " which cannot be mapped on an inventory with a size of " + inv.getSize() + "." + ChatColor.RESET);
+            throw new IllegalArgumentException();
         }
 
         inv.setItem(slot, menuObject.toItemStack());
@@ -79,7 +83,12 @@ public class Menu
     public void close()
     {
         this.objects.clear();
+        inv.clear();
         MenuAPI.i().getMenuRegistry().deregister(this);
+        for(HumanEntity viewer : inv.getViewers())
+        {
+            viewer.closeInventory();
+        }
     }
 
     public void openForPlayer(Player p)

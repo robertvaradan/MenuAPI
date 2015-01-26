@@ -1,6 +1,6 @@
-package com.ColonelHedgehog.MenuAPI.Libraries;
+package com.ColonelHedgehog.Menus.Libraries;
 
-import com.ColonelHedgehog.MenuAPI.Components.Menu;
+import com.ColonelHedgehog.Menus.Components.Menu;
 import org.bukkit.inventory.Inventory;
 
 import java.util.ArrayList;

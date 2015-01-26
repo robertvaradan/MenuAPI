@@ -1,8 +1,10 @@
-package com.ColonelHedgehog.MenuAPI.Components;
+package com.ColonelHedgehog.Menus.Components;
 
-import com.ColonelHedgehog.MenuAPI.Core.MenuAPI;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +25,37 @@ public class MenuObject
     private ActionListener actionListener;
     private Menu menu;
 
+    public void setIcon(ItemStack holder)
+    {
+        this.name = (holder.hasItemMeta() && holder.getItemMeta().hasDisplayName() ? holder.getItemMeta().getDisplayName() : null);
+        this.tooltip = (holder.hasItemMeta() && holder.getItemMeta().hasLore() ? holder.getItemMeta().getLore() : new ArrayList<String>());
+        this.icon = holder.getType();
+        this.data = holder.getDurability();
+        this.amount = holder.getAmount();
+
+        update();
+    }
+
+    public void setIcon(Material icon, byte data, String name, List<String> tooltip)
+    {
+        this.name = name;
+        this.tooltip = tooltip;
+        this.data = data;
+        this.icon = icon;
+        this.amount = 1;
+
+        update();
+    }
+
     public MenuObject(ItemStack holder)
     {
         if(holder == null)
         {
-            throw new IllegalArgumentException(MenuAPI.ANSI_RED + MenuAPI.ANSI_BOLD_ON + "The ItemStack used as a menu object was null." + MenuAPI.ANSI_BOLD_OFF + MenuAPI.ANSI_RESET);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "The ItemStack used as a menu object was null." + ChatColor.RESET);
+            throw new IllegalArgumentException();
         }
 
-        this.name = (holder.hasItemMeta() && holder.getItemMeta().hasDisplayName() ? holder.getItemMeta().getDisplayName() : "(Unnamed Menu Object)");
+        this.name = (holder.hasItemMeta() && holder.getItemMeta().hasDisplayName() ? holder.getItemMeta().getDisplayName() : "");
         this.tooltip = (holder.hasItemMeta() && holder.getItemMeta().hasLore() ? holder.getItemMeta().getLore() : new ArrayList<String>());
         this.icon = holder.getType();
         this.data = holder.getDurability();
@@ -54,7 +79,15 @@ public class MenuObject
 
     public ItemStack toItemStack()
     {
-        return new ItemStack(icon, amount, data);
+        ItemStack stack = new ItemStack(icon, amount, data);
+        ItemMeta meta = stack.getItemMeta();
+        meta.setLore(tooltip);
+        if(name != null)
+        {
+            meta.setDisplayName(name);
+        }
+        stack.setItemMeta(meta);
+        return stack;
     }
 
     public Coordinates getCoordinates()
@@ -74,5 +107,10 @@ public class MenuObject
     public ActionListener getActionListener()
     {
         return actionListener;
+    }
+
+    public void update()
+    {
+        coordinates.getMenu().getInventory().setItem(coordinates.asSlotNumber(), toItemStack());
     }
 }

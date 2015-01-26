@@ -1,6 +1,6 @@
-package com.ColonelHedgehog.MenuAPI.System;
+package com.ColonelHedgehog.Menus.System;
 
-import com.ColonelHedgehog.MenuAPI.Components.Coordinates;
+import com.ColonelHedgehog.Menus.Components.Coordinates;
 
 /**
  * Created by ColonelHedgehog on 12/11/14.
@@ -11,7 +11,7 @@ public class MenuUtils
 {
     public static int calculateXCoordinates(int slot)
     {
-        return (slot + 1 - calculateYCoordinates(slot));
+        return (slot + 2 - calculateYCoordinates(slot));
     }
 
     public static int calculateYCoordinates(int slot)
