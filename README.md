@@ -1,4 +1,4 @@
--><a href="https://github.com/ColonelHedgehog/MenuAPI/wiki">Wiki</a> • <a href="http://dev.bukkit.org/bukkit-plugins/menuapi">BukkitDev</a> • <a href="http://colonelhedgehog.com">Website</a> • <a href="https://github.com/ColonelHedgehog/MenuAPI/issues">Issues</a><-
+<a href="https://github.com/ColonelHedgehog/MenuAPI/wiki">Wiki</a> • <a href="http://dev.bukkit.org/bukkit-plugins/menuapi">BukkitDev</a> • <a href="http://colonelhedgehog.com">Website</a> • <a href="https://github.com/ColonelHedgehog/MenuAPI/issues">Issues</a>
 
 # MenuAPI
 MenuAPI is an API that excells at conciseness, ease of use, and flexibility. As a developer, I got sick and tired of having to create separate listeners in separate classes for doing the simplest of things. Inventory menus took a long time because of the sheer amount of calculations and code that were needed. Now you can make a sleek, professional inventory menu in minutes using this powerful core. Wow the server owners who use your plugin with this API.
