@@ -17,4 +17,4 @@ Same as X, except this is <b>how many spaces from the top left to the <u>bottom 
 ### Diagram
 This is an example of a 9 x 6 (54-slot) inventory. Like all inventories, <u>the X max is always constant.</u> The Y max may vary from size to size.
 
-<img src="/Media/Coordinates Reference.png">
+<img src="https://raw.githubusercontent.com/KingKrazy/MenuAPI/master/Documentation/Media/Coordinates%20Reference.png">
