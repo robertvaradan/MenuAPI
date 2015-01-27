@@ -19,7 +19,7 @@ This is an example of a 9 x 6 (54-slot) inventory. Like all inventories, <u>the 
 
 <img src="https://raw.githubusercontent.com/KingKrazy/MenuAPI/master/Documentation/Media/Coordinates%20Reference.png">
 
-## Referrence
+## Reference
 
 ### Initializers
 
