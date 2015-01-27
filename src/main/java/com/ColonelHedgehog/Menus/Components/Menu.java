@@ -80,6 +80,7 @@ public class Menu
         inv.setItem(coordinates.asSlotNumber(), null);
     }
 
+    @Deprecated
     public void close()
     {
         this.objects.clear();
@@ -89,6 +90,11 @@ public class Menu
         {
             viewer.closeInventory();
         }
+    }
+
+    public void close(Player p)
+    {
+        p.closeInventory();
     }
 
     public void openForPlayer(Player p)
@@ -106,5 +112,10 @@ public class Menu
             }
         }
         return null;
+    }
+
+    public HashMap<Integer, MenuObject> getObjects()
+    {
+        return objects;
     }
 }

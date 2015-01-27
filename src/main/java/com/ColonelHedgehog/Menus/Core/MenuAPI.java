@@ -2,6 +2,7 @@ package com.ColonelHedgehog.Menus.Core;
 
 import com.ColonelHedgehog.Menus.Libraries.MenuRegistry;
 import com.ColonelHedgehog.Menus.Listeners.MenuActions;
+import com.ColonelHedgehog.Menus.Listeners.MenuCloseAction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,6 +26,7 @@ public class MenuAPI extends JavaPlugin
         plugin = this;
         menuRegistry = new MenuRegistry();
         plugin.getServer().getPluginManager().registerEvents(new MenuActions(), this);
+        plugin.getServer().getPluginManager().registerEvents(new MenuCloseAction(), this);
         Bukkit.getConsoleSender().sendMessage("Initializing " + ChatColor.BLUE + ChatColor.BOLD + "Colonel" + ChatColor.DARK_AQUA + "Hedgehog" + ChatColor.RESET + "'s " + ChatColor.YELLOW + "MenuAPI. All libraries loaded." + ChatColor.RESET);
     }
 
