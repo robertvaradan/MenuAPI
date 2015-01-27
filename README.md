@@ -26,4 +26,4 @@ Then, to depend on the project, just add this:
 <b>Please note:</b> This cannot be used as a substitute to <code>depend: [MenuAPI]</code> in your plugin.yml. This is project-based <u>only</u>.
 
 # How do I use this thing?
-Fear not! I've covered all of the basics of this API <a href="https://github.com/KingKrazy/MenuAPI/blob/master/Tutorials/1 - Setup.md">here.</a> <b>Don't forget, you can help me by forking this repo and submitting pull requests for your tutorials, too!</b>
+Fear not! I've covered all of the basics of this API <a href="https://github.com/ColonelHedgehog/MenuAPI/wiki/1.-Setup">here.</a> <b>Don't forget, you can help me by forking this repo and submitting pull requests for your tutorials, too!</b>
