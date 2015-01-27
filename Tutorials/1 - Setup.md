@@ -1,3 +1,5 @@
+Please note, these tutorials are for Developers. You can learn about installing Bukkit plugins <a href="http://wiki.bukkit.org/Installing_Plugins">here</a>.
+
 # Setup
 
 To start with, there are a few basics we need to cover. 
