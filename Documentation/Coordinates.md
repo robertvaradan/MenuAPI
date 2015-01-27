@@ -39,25 +39,25 @@ Coordinates(Menu menu, int slot);
 ### Methods
 
 #### getX();
-<b>Return type:</b> int
+<b>Return type:</b> int<br>
 <b>Modifiers:</b> public
 
 Returns the X coordinate.
 
 #### getY();
-<b>Return type:</b> int
+<b>Return type:</b> int<br>
 <b>Modifiers:</b> public
 
 Returns the Y coordinate.
 
 #### getMenu();
-<b>Return type:</b> <a href="https://github.com/KingKrazy/MenuAPI/tree/master/Documentation/Menu.md">Menu</a>
+<b>Return type:</b> <a href="https://github.com/KingKrazy/MenuAPI/tree/master/Documentation/Menu.md">Menu</a><br>
 <b>Modifiers:</b> public
 
 Returns the Menu that the coordinates are mapped on.
 
 #### asSlotNumber();
-<b>Return type:</b> int
+<b>Return type:</b> int<br>
 <b>Modifiers:</b> public
 
 Converts the X and Y coordinates into an inventory index/slot number.
