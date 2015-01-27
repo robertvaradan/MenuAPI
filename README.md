@@ -6,23 +6,20 @@ MenuAPI uses Maven to make things easier for you. If you're making a Maven proje
 
 ```
 	<repositories>
-		<repository>
-			<id>MenuAPI-repo</id>
-			<name>MenuAPI</name>
-			<url>https://github.com/KingKrazy/MenuAPI/tree/master/src/main/java</url>
-			<layout>default</layout>
-		</repository>
+	        <repository>
+	            <id>MenuAPI-repo</id>
+	            <url>https://github.com/ColonelHedgehog/MenuAPI/raw/master/</url>
+	        </repository>
 	</repositories>
 ```
 Then, to depend on the project, just add this:
 ```
 	<dependencies>
-		<dependency>
-			<groupId>com.ColonelHedgehog</groupId>
-			<artifactId>MenuAPI</artifactId>
-			<version>1.0-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
+	        <dependency>
+	            <groupId>com.ColonelHedgehog</groupId>
+	            <artifactId>MenuAPI</artifactId>
+	            <version>1.1-SNAPSHOT</version>
+	        </dependency>
 	</dependencies>
 ```
 
