@@ -6,7 +6,7 @@ MenuAPI is an API that excells at conciseness, ease of use, and flexibility. As 
 # Maven Dependencies
 MenuAPI uses Maven to make things easier for you. If you're making a Maven project, you can add the repository like this:
 
-```
+```XML
 	<repositories>
 	        <repository>
 	            <id>MenuAPI-repo</id>
@@ -15,7 +15,7 @@ MenuAPI uses Maven to make things easier for you. If you're making a Maven proje
 	</repositories>
 ```
 Then, to depend on the project, just add this:
-```
+```XML
 	<dependencies>
 	        <dependency>
 	            <groupId>com.ColonelHedgehog</groupId>
