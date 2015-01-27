@@ -31,17 +31,17 @@ Inventory inventory = Bukkit.createInventory(player, size, name);
 ```
 
 #### player:
-Type: Player
+Type: Player<br>
 The owner of the inventory. In this case, it should be <code>event.getPlayer();</code>
 
 #### size:
-Type: int
+Type: int<br>
 This is the size of the inventory in slots. <b>This must always be evenly divisible by 9.</b> To test this, just get a calculator, put your desired number of slots in and divide it by 9. If you get a decimal number, <b>you cannot use it.</b>
 
 Recommended inventory sizes are: <b>9, 18, 27, 36, 45, 54</b> WARNING: Anything above 54 will be glitchy, whether or not it's divisible by 9. For big inventories, 54 is the safest to use.
 
 ### name:
-Type: String
+Type: String<br>
 This can be up to 32 characters long. Anything longer will throw an error into the console and your inventory will not work. You can use colors here, but some won't show up very well (namely §7 and §e). For general purposes, it's best to use their dark alternatives (the ChatColors whose names start with "DARK").
 
 Now that we've made the inventory, we'll need to create it as a menu. Something you should note is the Menu will be registered from the moment it is initialized. When you use the Menu#close() method, however, it will de-register.
