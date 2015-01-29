@@ -64,6 +64,11 @@ public class Menu
         inv.setItem(slot, menuObject.toItemStack());
     }
 
+    public void removeMenuObjectAt(Coordinates coordinates)
+    {
+        inv.setItem(coordinates.asSlotNumber(), null);
+    }
+
     public void addMenuObject(MenuObject... menuObject)
     {
         for(MenuObject me : menuObject)
@@ -73,11 +78,6 @@ public class Menu
                 setMenuObjectAt(new Coordinates(this, inv.firstEmpty()), me);
             }
         }
-    }
-
-    public void removeMenuObjectAt(Coordinates coordinates)
-    {
-        inv.setItem(coordinates.asSlotNumber(), null);
     }
 
     @Deprecated

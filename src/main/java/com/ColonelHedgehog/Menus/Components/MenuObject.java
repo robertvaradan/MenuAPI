@@ -6,7 +6,6 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,33 +15,25 @@ import java.util.List;
  */
 public class MenuObject
 {
-    private String name;
-    private List<String> tooltip;
-    private Material icon;
-    private short data;
-    private int amount;
+    private ItemStack item;
     private Coordinates coordinates;
     private ActionListener actionListener;
     private Menu menu;
 
     public void setIcon(ItemStack holder)
     {
-        this.name = (holder.hasItemMeta() && holder.getItemMeta().hasDisplayName() ? holder.getItemMeta().getDisplayName() : null);
-        this.tooltip = (holder.hasItemMeta() && holder.getItemMeta().hasLore() ? holder.getItemMeta().getLore() : new ArrayList<String>());
-        this.icon = holder.getType();
-        this.data = holder.getDurability();
-        this.amount = holder.getAmount();
+        this.item = item;
 
         update();
     }
 
     public void setIcon(Material icon, byte data, String name, List<String> tooltip)
     {
-        this.name = name;
-        this.tooltip = tooltip;
-        this.data = data;
-        this.icon = icon;
-        this.amount = 1;
+        item = new ItemStack (icon, 1, data);
+        ItemMeta meta = item.getItemMeta();
+        meta.setLore(tooltip);
+        meta.setDisplayName(name);
+        item.setItemMeta(meta);
 
         update();
     }
@@ -55,11 +46,8 @@ public class MenuObject
             throw new IllegalArgumentException();
         }
 
-        this.name = (holder.hasItemMeta() && holder.getItemMeta().hasDisplayName() ? holder.getItemMeta().getDisplayName() : "");
-        this.tooltip = (holder.hasItemMeta() && holder.getItemMeta().hasLore() ? holder.getItemMeta().getLore() : new ArrayList<String>());
-        this.icon = holder.getType();
-        this.data = holder.getDurability();
-        this.amount = holder.getAmount();
+
+        this.item = holder;
         this.coordinates = null;
         this.actionListener = null;
         this.menu = null;
@@ -67,11 +55,11 @@ public class MenuObject
 
     public MenuObject(Material icon, byte data, String name, List<String> tooltip)
     {
-        this.name = name;
-        this.tooltip = tooltip;
-        this.data = data;
-        this.icon = icon;
-        this.amount = 1;
+        item = new ItemStack(icon, 1, data);
+        ItemMeta meta = item.getItemMeta();
+        meta.setLore(tooltip);
+        meta.setDisplayName(name);
+        item.setItemMeta(meta);
         this.coordinates = null;
         this.actionListener = null;
         this.menu = null;
@@ -79,15 +67,7 @@ public class MenuObject
 
     public ItemStack toItemStack()
     {
-        ItemStack stack = new ItemStack(icon, amount, data);
-        ItemMeta meta = stack.getItemMeta();
-        meta.setLore(tooltip);
-        if(name != null)
-        {
-            meta.setDisplayName(name);
-        }
-        stack.setItemMeta(meta);
-        return stack;
+        return this.item;
     }
 
     public Coordinates getCoordinates()

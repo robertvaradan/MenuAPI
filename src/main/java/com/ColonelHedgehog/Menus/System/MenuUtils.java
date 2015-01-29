@@ -9,14 +9,13 @@ import com.ColonelHedgehog.Menus.Components.Coordinates;
  */
 public class MenuUtils
 {
-    public static int calculateXCoordinates(int slot)
+    public static int[] calculateCoordinates(int slot)
     {
-        return (slot + 2 - calculateYCoordinates(slot));
-    }
+        slot++;
+        int sloty = (slot / 9);
+        int slotx = slot - (sloty * 9);
 
-    public static int calculateYCoordinates(int slot)
-    {
-        return (slot / 9) + 1;
+        return new int[]{slotx, sloty + 1};
     }
 
     public static int toSlotNumber(Coordinates coordinates)

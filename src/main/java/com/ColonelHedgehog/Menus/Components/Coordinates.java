@@ -23,8 +23,8 @@ public class Coordinates
     public Coordinates(Menu menu, int slot)
     {
         this.menu = menu;
-        this.x = MenuUtils.calculateXCoordinates(slot);
-        this.y = MenuUtils.calculateYCoordinates(slot);
+        this.x = MenuUtils.calculateCoordinates(slot)[0];
+        this.y = MenuUtils.calculateCoordinates(slot)[1];
     }
 
     public int getX()
