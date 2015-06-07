@@ -11,11 +11,12 @@ public class MenuUtils
 {
     public static int[] calculateCoordinates(int slot)
     {
-        slot++;
-        int sloty = (slot / 9);
-        int slotx = slot - (sloty * 9);
+        //System.out.println("Calculating by slot: " + slot);
+        int slotx = (slot % 9) + 1;
+        int sloty = (slot / 9) + 1;
 
-        return new int[]{slotx, sloty + 1};
+        //System.out.println("RETURN: " + (slotx++) + ", " + (sloty++));
+        return new int[]{slotx, sloty};
     }
 
     public static int toSlotNumber(Coordinates coordinates)

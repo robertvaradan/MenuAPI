@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +20,7 @@ public class MenuObject
     private Coordinates coordinates;
     private ActionListener actionListener;
     private Menu menu;
+    private HashMap<Object, Object> metadata;
 
     public void setIcon(ItemStack holder)
     {
@@ -40,6 +42,7 @@ public class MenuObject
 
     public MenuObject(ItemStack holder)
     {
+        metadata = new HashMap<>();
         if(holder == null)
         {
             Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "The ItemStack used as a menu object was null." + ChatColor.RESET);
@@ -55,6 +58,7 @@ public class MenuObject
 
     public MenuObject(Material icon, byte data, String name, List<String> tooltip)
     {
+        metadata = new HashMap<>();
         item = new ItemStack(icon, 1, data);
         ItemMeta meta = item.getItemMeta();
         meta.setLore(tooltip);
@@ -92,5 +96,15 @@ public class MenuObject
     public void update()
     {
         coordinates.getMenu().getInventory().setItem(coordinates.asSlotNumber(), toItemStack());
+    }
+
+    public HashMap<Object, Object> getMetadata()
+    {
+        return metadata;
+    }
+
+    public void setMetadata(HashMap<Object, Object> metadata)
+    {
+        this.metadata = metadata;
     }
 }

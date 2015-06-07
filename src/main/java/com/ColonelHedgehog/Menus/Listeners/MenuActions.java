@@ -1,5 +1,6 @@
 package com.ColonelHedgehog.Menus.Listeners;
 
+import com.ColonelHedgehog.Menus.Components.Coordinates;
 import com.ColonelHedgehog.Menus.Components.Menu;
 import com.ColonelHedgehog.Menus.Components.MenuObject;
 import com.ColonelHedgehog.Menus.Core.MenuAPI;
@@ -32,7 +33,7 @@ public class MenuActions implements Listener
 
         event.setCancelled(true);
 
-        final MenuObject menuObject = menu.getItemByItemStack(event.getCurrentItem());
+        final MenuObject menuObject = menu.getItemAt(new Coordinates(menu, event.getSlot()));
 
         if(menuObject == null)
         {
