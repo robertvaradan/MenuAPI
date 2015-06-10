@@ -107,4 +107,9 @@ public class MenuObject
     {
         this.metadata = metadata;
     }
+
+    public Menu getMenu()
+    {
+        return menu;
+    }
 }
