@@ -20,7 +20,7 @@ Then, to depend on the project, just add this:
 	        <dependency>
 	            <groupId>com.ColonelHedgehog</groupId>
 	            <artifactId>MenuAPI</artifactId>
-	            <version>1.1-SNAPSHOT</version>
+	            <version>1.2-SNAPSHOT</version>
 	        </dependency>
 	</dependencies>
 ```
