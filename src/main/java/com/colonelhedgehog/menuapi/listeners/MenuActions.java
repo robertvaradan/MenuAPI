@@ -3,6 +3,7 @@ package com.colonelhedgehog.menuapi.listeners;
 import com.colonelhedgehog.menuapi.components.Coordinates;
 import com.colonelhedgehog.menuapi.components.Menu;
 import com.colonelhedgehog.menuapi.components.MenuObject;
+import com.colonelhedgehog.menuapi.components.sub.GUISound;
 import com.colonelhedgehog.menuapi.core.MenuAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -25,7 +26,7 @@ public class MenuActions implements Listener
             return;
         }
 
-        Menu menu = MenuAPI.i().getMenuRegistry().getByInventory(event.getInventory());
+        final Menu menu = MenuAPI.i().getMenuRegistry().getByInventory(event.getInventory());
         if(menu == null)
         {
             return;
@@ -51,6 +52,14 @@ public class MenuActions implements Listener
             @Override
             public void run()
             {
+                GUISound sound = menuObject.getGUISound();
+                if(menuObject.getGUISound() != null)
+                {
+                    if(sound.getPlayOnClick())
+                    {
+                        sound.playGUISound((Player) event.getWhoClicked());
+                    }
+                }
                 menuObject.getActionListener().onClick(event.getClick(), menuObject, (Player) event.getWhoClicked());
             }
         }.runTask(MenuAPI.i());
