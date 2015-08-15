@@ -1,5 +1,6 @@
-package com.ColonelHedgehog.Menus.Components;
+package com.colonelhedgehog.menuapi.components;
 
+import com.colonelhedgehog.menuapi.components.sub.GUISound;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -19,12 +20,12 @@ public class MenuObject
     private ItemStack item;
     private Coordinates coordinates;
     private ActionListener actionListener;
-    private Menu menu;
     private HashMap<Object, Object> metadata;
+    private GUISound sound;
 
     public void setIcon(ItemStack holder)
     {
-        this.item = item;
+        this.item = holder;
 
         update();
     }
@@ -53,7 +54,6 @@ public class MenuObject
         this.item = holder;
         this.coordinates = null;
         this.actionListener = null;
-        this.menu = null;
     }
 
     public MenuObject(Material icon, byte data, String name, List<String> tooltip)
@@ -66,7 +66,6 @@ public class MenuObject
         item.setItemMeta(meta);
         this.coordinates = null;
         this.actionListener = null;
-        this.menu = null;
     }
 
     public ItemStack toItemStack()
@@ -110,6 +109,16 @@ public class MenuObject
 
     public Menu getMenu()
     {
-        return menu;
+        return getCoordinates().getMenu();
+    }
+
+    public void setGUISound(GUISound sound)
+    {
+        this.sound = sound;
+    }
+
+    public GUISound getGUISound()
+    {
+        return sound;
     }
 }

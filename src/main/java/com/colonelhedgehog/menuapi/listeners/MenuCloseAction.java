@@ -1,7 +1,7 @@
-package com.ColonelHedgehog.Menus.Listeners;
+package com.colonelhedgehog.menuapi.listeners;
 
-import com.ColonelHedgehog.Menus.Components.Menu;
-import com.ColonelHedgehog.Menus.Core.MenuAPI;
+import com.colonelhedgehog.menuapi.components.Menu;
+import com.colonelhedgehog.menuapi.core.MenuAPI;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

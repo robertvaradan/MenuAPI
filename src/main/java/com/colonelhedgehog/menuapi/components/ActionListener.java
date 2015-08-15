@@ -1,4 +1,4 @@
-package com.ColonelHedgehog.Menus.Components;
+package com.colonelhedgehog.menuapi.components;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

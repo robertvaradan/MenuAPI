@@ -1,6 +1,6 @@
-package com.ColonelHedgehog.Menus.Components;
+package com.colonelhedgehog.menuapi.components;
 
-import com.ColonelHedgehog.Menus.System.MenuUtils;
+import com.colonelhedgehog.menuapi.system.MenuUtils;
 
 /**
  * Created by ColonelHedgehog on 1/22/15.

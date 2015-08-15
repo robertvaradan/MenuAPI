@@ -1,4 +1,4 @@
-package com.ColonelHedgehog.Menus.System;
+package com.colonelhedgehog.menuapi.system;
 
 /**
  * Created by ColonelHedgehog on 1/25/15.

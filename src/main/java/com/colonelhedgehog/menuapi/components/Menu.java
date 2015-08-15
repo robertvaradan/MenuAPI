@@ -1,6 +1,6 @@
-package com.ColonelHedgehog.Menus.Components;
+package com.colonelhedgehog.menuapi.components;
 
-import com.ColonelHedgehog.Menus.Core.MenuAPI;
+import com.colonelhedgehog.menuapi.core.MenuAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.HumanEntity;
@@ -69,6 +69,7 @@ public class Menu
 
     public void removeMenuObjectAt(Coordinates coordinates)
     {
+        coordinates.getMenu().getItemAt(coordinates).setCoordinates(null);
         inv.setItem(coordinates.asSlotNumber(), null);
     }
 
@@ -93,6 +94,12 @@ public class Menu
         {
             viewer.closeInventory();
         }
+    }
+
+    public void clear()
+    {
+        this.objects.clear();
+        inv.clear();
     }
 
     public void close(Player p)

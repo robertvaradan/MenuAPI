@@ -1,5 +1,5 @@
 name: MenuAPI
-main: com.ColonelHedgehog.Menus.Core.MenuAPI
+main: com.colonelhedgehog.menuapipi.core.MenuAPI
 version: 1.2
 author: ColonelHedgehog
 description: A powerful API for creating inventory menus with both flexibility and ease.

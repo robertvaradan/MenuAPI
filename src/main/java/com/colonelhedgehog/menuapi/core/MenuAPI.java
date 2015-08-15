@@ -1,8 +1,8 @@
-package com.ColonelHedgehog.Menus.Core;
+package com.colonelhedgehog.menuapi.core;
 
-import com.ColonelHedgehog.Menus.Libraries.MenuRegistry;
-import com.ColonelHedgehog.Menus.Listeners.MenuActions;
-import com.ColonelHedgehog.Menus.Listeners.MenuCloseAction;
+import com.colonelhedgehog.menuapi.libraries.MenuRegistry;
+import com.colonelhedgehog.menuapi.listeners.MenuActions;
+import com.colonelhedgehog.menuapi.listeners.MenuCloseAction;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;

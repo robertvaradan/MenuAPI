@@ -1,6 +1,6 @@
-package com.ColonelHedgehog.Menus.System;
+package com.colonelhedgehog.menuapi.system;
 
-import com.ColonelHedgehog.Menus.Components.Coordinates;
+import com.colonelhedgehog.menuapi.components.Coordinates;
 
 /**
  * Created by ColonelHedgehog on 12/11/14.
@@ -11,11 +11,11 @@ public class MenuUtils
 {
     public static int[] calculateCoordinates(int slot)
     {
-        //System.out.println("Calculating by slot: " + slot);
+        //system.out.println("Calculating by slot: " + slot);
         int slotx = (slot % 9) + 1;
         int sloty = (slot / 9) + 1;
 
-        //System.out.println("RETURN: " + (slotx++) + ", " + (sloty++));
+        //system.out.println("RETURN: " + (slotx++) + ", " + (sloty++));
         return new int[]{slotx, sloty};
     }
 
