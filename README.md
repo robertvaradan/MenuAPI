@@ -1,9 +1,13 @@
 <a href="https://github.com/ColonelHedgehog/MenuAPI/wiki">Wiki</a> • <a href="http://dev.bukkit.org/bukkit-plugins/menuapi">BukkitDev</a> • <a href="http://colonelhedgehog.com">Website</a> • <a href="https://github.com/ColonelHedgehog/MenuAPI/issues">Issues</a>
 
 # MenuAPI
-MenuAPI is an API that excells at conciseness, ease of use, and flexibility. As a developer, I got sick and tired of having to create separate listeners in separate classes for doing the simplest of things. Inventory menus took a long time because of the sheer amount of calculations and code that were needed. Now you can make a sleek, professional inventory menu in minutes using this powerful core. Wow the server owners who use your plugin with this API.
+MenuAPI is an API that excells at conciseness, ease of use, and flexibility. As a developer, I got sick and tired of having to create separate listeners in separate classes for doing the simplest of things. Inventory menus took a long time because of the sheer amount of calculations and code that were needed. Now you can make a sleek, professional inventory menu in minutes using this powerful core.
 
-# Maven Dependencies
+# MenuAPI is a whole plugin. Is it cumbersome?
+
+Not at all. MenuAPI takes up about 20kbs of space. And if you have just two plugins using it on your server, its size would be half of what it would be if it was installed built in to each plugin!
+
+# Is it simple to install as a developer?
 MenuAPI uses Maven to make things easier for you. If you're making a Maven project, you can add the repository like this:
 
 ```XML
